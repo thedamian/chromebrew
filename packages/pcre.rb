@@ -14,7 +14,7 @@ class Pcre < Package
 
   def self.install
     system "make", "DESTDIR=#{CREW_DEST_DIR}", "install"
-    system "mv -v /usr/lib/libpcre.so.* /lib "
-    system "ln -sfv ../../lib/$(readlink /usr/lib/libpcre.so) /usr/lib/libpcre.so"
+    #system "mv -v /usr/lib/libpcre.so.* /lib "
+    #system "ln -sfv ../../lib/$(readlink /usr/lib/libpcre.so) /usr/lib/libpcre.so"
   end
 end
