@@ -397,7 +397,8 @@ def unpack (meta)
   target_dir = nil
   Dir.chdir CREW_BREW_DIR do
     puts "Unpacking archive, this may take awhile..."
-    Dir.mkdir("#{extract_dir}") unless Dir.exist?("#{extract_dir}")
+    Dir.
+      ("#{extract_dir}") unless Dir.exist?("#{extract_dir}")
     if meta[:filename][-4,4] == ".zip"
       if @opt_verbose then
         system "unzip", "-v", "-d", "#{extract_dir}", meta[:filename]
@@ -568,7 +569,11 @@ def resolve_dependencies_and_install
         else
           system "rm -rf *"
         end
-        system "mkdir dest" # this is a little ugly, feel free to find a better way
+          begin
+            system "mkdir dest" # this is a little ugly, feel free to find a better way
+          rescue StandardError => bang
+            puts "mkdir dest failed. Continue on"
+          end 
       end
     end
   end
