@@ -7,18 +7,7 @@ class Glibc223 < Package
   source_url 'https://ftpmirror.gnu.org/glibc/glibc-2.23.tar.xz'
   source_sha256 '94efeb00e4603c8546209cefb3e1a50a5315c86fa9b078b6fad758e187ce13e9'
 
-  binary_url ({
-    aarch64: 'https://dl.bintray.com/chromebrew/chromebrew/glibc223-2.23-3-chromeos-armv7l.tar.xz',
-     armv7l: 'https://dl.bintray.com/chromebrew/chromebrew/glibc223-2.23-3-chromeos-armv7l.tar.xz',
-       i686: 'https://dl.bintray.com/chromebrew/chromebrew/glibc223-2.23-3-chromeos-i686.tar.xz',
-     x86_64: 'https://dl.bintray.com/chromebrew/chromebrew/glibc223-2.23-3-chromeos-x86_64.tar.xz',
-  })
-  binary_sha256 ({
-    aarch64: 'de8de509b8296b73539a6ee06aefed5df9f3fa56e2d086addecc817f2eaeb1f2',
-     armv7l: 'de8de509b8296b73539a6ee06aefed5df9f3fa56e2d086addecc817f2eaeb1f2',
-       i686: 'f76de42054c1413d88618a218b9933056a0b31aaf6818043bee82a2ead245522',
-     x86_64: '9989a2208ede7055127780de0990d8bc6dd60379535c7d18a52da0742117bca9',
-  })
+
 
   depends_on 'libgd' => :build
   depends_on 'texinfo' => :build
